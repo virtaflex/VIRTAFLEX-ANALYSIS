@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { CartProvider } from './state/cart.tsx';
 import { UIProvider } from './state/ui.tsx';
 import { Header } from './components/Header.tsx';
@@ -18,6 +18,9 @@ const OrderConfirmation = lazy(() => import('./pages/OrderConfirmation.tsx'));
 const TrackOrder = lazy(() => import('./pages/TrackOrder.tsx'));
 const NotFound = lazy(() => import('./pages/NotFound.tsx'));
 
+// Hash routing (#/menu) for static hosts without server-side routing (npm run build:static).
+const Router = import.meta.env.VITE_ROUTER === 'hash' ? HashRouter : BrowserRouter;
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -28,7 +31,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <CartProvider>
         <UIProvider>
           <ScrollToTop />
@@ -58,6 +61,6 @@ export default function App() {
           <Toast />
         </UIProvider>
       </CartProvider>
-    </BrowserRouter>
+    </Router>
   );
 }

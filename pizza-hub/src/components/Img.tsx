@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import { images } from '../config/images.ts';
+import { asset } from '../lib/asset.ts';
 
 interface Props {
   /** Registry key (e.g. "photos/hero") or a direct URL */
@@ -19,13 +20,13 @@ export function Img({ src, alt, sizes = '100vw', className, style, priority }: P
   const loading = priority ? 'eager' : 'lazy';
   const fetchPriority = priority ? 'high' : 'auto';
   if (!entry) {
-    return <img src={src} alt={alt} className={className} style={style} loading={loading} decoding="async" fetchPriority={fetchPriority} />;
+    return <img src={asset(src)} alt={alt} className={className} style={style} loading={loading} decoding="async" fetchPriority={fetchPriority} />;
   }
   const largest = entry.widths[entry.widths.length - 1];
-  const srcSet = entry.widths.map((w) => `/images/${src}-${w}.webp ${w}w`).join(', ');
+  const srcSet = entry.widths.map((w) => `${asset(`images/${src}-${w}.webp`)} ${w}w`).join(', ');
   return (
     <img
-      src={`/images/${src}-${entry.widths[Math.min(1, entry.widths.length - 1)]}.webp`}
+      src={asset(`images/${src}-${entry.widths[Math.min(1, entry.widths.length - 1)]}.webp`)}
       srcSet={srcSet}
       sizes={sizes}
       width={largest}

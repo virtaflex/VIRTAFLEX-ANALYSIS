@@ -11,6 +11,7 @@
     "dev": "vite",
     "dev:server": "node --watch server/index.ts",
     "build": "tsc -p tsconfig.json && vite build",
+    "build:static": "tsc -p tsconfig.json && VITE_ROUTER=hash vite build --base ./ --outDir dist-static",
     "preview": "vite preview",
     "start": "node server/index.ts",
     "typecheck": "tsc -p tsconfig.json",

@@ -3,6 +3,8 @@
    Change brand colors, fonts and radii here. Everything else uses these.
    ───────────────────────────────────────────────────────────── */
 :root {
+  color-scheme: dark;
+
   /* Brand palette */
   --ph-red: #b51217;
   --ph-burgundy: #6e080d;
