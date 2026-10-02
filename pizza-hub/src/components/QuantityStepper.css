@@ -1,0 +1,39 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 245, 223, 0.06);
+  border: 1px solid var(--ph-line-strong);
+}
+.stepper button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--ph-cream);
+  transition: color 0.2s, background-color 0.2s;
+}
+.stepper button:hover:not(:disabled) {
+  color: var(--ph-gold);
+  background: rgba(255, 245, 223, 0.06);
+}
+.stepper button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.stepper output {
+  min-width: 26px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+}
+.stepper--sm button {
+  width: 34px;
+  height: 34px;
+}
+.stepper--sm output {
+  min-width: 20px;
+  font-size: 14px;
+}

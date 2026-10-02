@@ -1,0 +1,38 @@
+.mobile-bar {
+  display: none;
+}
+@media (max-width: 900px) {
+  :root {
+    --mobile-bar-space: 84px;
+  }
+  .mobile-bar {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(to top, rgba(18, 11, 10, 0.96) 55%, rgba(18, 11, 10, 0));
+    animation: bar-in 0.5s var(--ease-out);
+  }
+  .mobile-bar-btn {
+    justify-content: space-between;
+  }
+  .mobile-bar-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background: rgba(0, 0, 0, 0.22);
+  }
+  .mobile-bar-total {
+    font-weight: 900;
+  }
+}
+@keyframes bar-in {
+  from {
+    transform: translateY(100%);
+  }
+}

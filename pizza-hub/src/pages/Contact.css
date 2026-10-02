@@ -1,0 +1,90 @@
+.contact {
+  padding-top: clamp(40px, 5vw, 64px);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.contact-card {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: var(--ph-ink-2);
+  border: 1px solid var(--ph-line);
+  box-shadow: var(--shadow-card);
+}
+.contact-card h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(245, 169, 0, 0.12);
+  color: var(--ph-gold);
+}
+.contact-big {
+  font-size: 18px;
+  font-weight: 600;
+}
+.contact-muted {
+  color: var(--ph-text-muted);
+}
+.contact-map {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: var(--radius);
+  filter: grayscale(0.3) contrast(1.05);
+}
+.contact-channels,
+.contact-hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+.contact-channels a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--ph-line-strong);
+  transition: border-color 0.2s;
+}
+.contact-channels a:hover {
+  border-color: var(--ph-gold);
+}
+.contact-channels svg {
+  color: var(--ph-gold);
+  flex: none;
+}
+.contact-channels a > span {
+  display: grid;
+  font-size: 14px;
+}
+.contact-channels a > span span {
+  color: var(--ph-text-muted);
+}
+.contact-hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ph-line);
+}
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,185 @@
+/* Shared small components */
+
+/* Segmented control (Delivery / Pickup) */
+.seg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 245, 223, 0.06);
+  border: 1px solid var(--ph-line);
+}
+.seg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ph-text-muted);
+  transition:
+    background-color 0.25s,
+    color 0.25s;
+}
+.seg-btn.is-on {
+  background: var(--ph-cream);
+  color: var(--ph-ink);
+}
+.seg-btn:not(.is-on):hover {
+  color: var(--ph-cream);
+}
+.select--sm {
+  min-height: 46px;
+  padding-block: 10px;
+  font-size: 15px;
+}
+
+/* Totals */
+.summary {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.summary > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+}
+.summary dt {
+  color: var(--ph-text-muted);
+}
+.summary dd {
+  margin: 0;
+  font-weight: 600;
+}
+.summary-hint {
+  font-size: 13px;
+  color: var(--ph-gold);
+}
+.summary .summary-total {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--ph-line-strong);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.summary-total dt {
+  color: var(--ph-cream);
+}
+.summary-total dd {
+  color: var(--ph-gold);
+  font-weight: 900;
+}
+
+/* Text buttons */
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ph-text-muted);
+  transition: color 0.2s;
+}
+.link-btn:hover {
+  color: var(--ph-gold);
+}
+.link-btn--danger:hover {
+  color: #ff8a7a;
+}
+
+/* Notices */
+.notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ph-text-faint);
+}
+.notice svg {
+  flex: none;
+  color: var(--ph-gold);
+}
+.notice--strong {
+  display: flex;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(245, 169, 0, 0.1);
+  border: 1px solid rgba(245, 169, 0, 0.3);
+  color: var(--ph-cream);
+}
+.section--cream .notice {
+  color: var(--ph-ink-muted);
+}
+.section--cream .notice svg {
+  color: var(--ph-red);
+}
+
+/* "Coming soon" pill inside pending external CTAs */
+.cta-pending {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 245, 223, 0.14);
+}
+[aria-disabled='true'].btn {
+  opacity: 0.7;
+}
+
+.btn.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Toast */
+.toast-region {
+  position: fixed;
+  left: 50%;
+  top: calc(var(--header-h) + 12px);
+  transform: translateX(-50%);
+  z-index: 90;
+  pointer-events: none;
+  max-width: calc(100vw - 32px);
+}
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--ph-cream);
+  color: var(--ph-ink);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+  animation: toast-in 2.6s var(--ease-out) forwards;
+}
+.toast svg {
+  color: var(--ph-red);
+}
+@keyframes toast-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+  }
+  10%,
+  85% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
