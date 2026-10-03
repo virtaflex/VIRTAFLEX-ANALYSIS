@@ -1,0 +1,43 @@
+/*
+ * Fortone design tokens. Change the brand here — every page reads from these.
+ * Palette: cocoa/berry darks for drama, cream + blush for sweetness, gold for the premium accent.
+ */
+:root {
+  --cocoa-950: #140a0c;
+  --cocoa-900: #1f0f13;
+  --berry-800: #3a1520;
+  --berry-700: #571e2f;
+  --berry-500: #a8324f;
+  --blush-300: #f6b3c0;
+  --blush-100: #fde7ec;
+  --cream-50: #fff8ee;
+  --cream-100: #fbf1e2;
+  --cream-200: #f3e3cc;
+  --gold-400: #c9a15b;
+  --gold-300: #dcbd84;
+  --pistachio: #cfe0a6;
+
+  --ink: #2a1418;
+  --ink-soft: #6b5156;
+  --on-dark: #fff8ee;
+  --on-dark-soft: rgba(255, 248, 238, 0.68);
+  --line: rgba(42, 20, 24, 0.12);
+  --line-dark: rgba(255, 248, 238, 0.14);
+
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope Variable', 'Manrope', system-ui, sans-serif;
+
+  --fs-display: clamp(3.1rem, 9.2vw, 9.5rem);
+  --fs-display-md: clamp(2.5rem, 5.6vw, 5.4rem);
+  --fs-display-sm: clamp(2rem, 3.6vw, 3.2rem);
+  --fs-lead: clamp(1.08rem, 1.35vw, 1.3rem);
+
+  --radius-lg: 36px;
+  --radius-md: 22px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --section: clamp(96px, 14vw, 200px);
+  --header-h: 84px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+}
